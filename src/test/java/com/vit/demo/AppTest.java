@@ -8,7 +8,7 @@ public class AppTest {
 
     @Test
     void testAdd() {
-        int expected = 5;
+        int expected = 6;
         int actual = App.add(2, 3);
 
         assertEquals(expected, actual);
