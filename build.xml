@@ -20,11 +20,13 @@
     <target name="compile-test" depends="compile">
         <mkdir dir="${test.classes.dir}"/>
         <javac srcdir="${src.test}" destdir="${test.classes.dir}" source="21" target="21"
-               includeantruntime="false" classpath="${classes.dir}"/>
+       includeantruntime="false" classpath="${classes.dir}">
+    <include name="**/AntTest.java"/>
+</javac>
     </target>
 
     <target name="test" depends="compile-test">
-        <java classname="com.vit.demo.AppTest" fork="true" failonerror="true">
+    <java classname="com.vit.demo.AntTest" fork="true" failonerror="true">
             <classpath>
                 <pathelement location="${classes.dir}"/>
                 <pathelement location="${test.classes.dir}"/>
